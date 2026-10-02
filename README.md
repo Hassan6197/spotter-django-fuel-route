@@ -173,15 +173,6 @@ routing/
   tests/                   optimizer, geometry, locations, API smoke tests
 ```
 
-## Demo tips (Loom)
-
-1. Start the server, open `/`, and plan Chicago, IL to Denver, CO. Show the route, the two stops, and the cost.
-2. Plan Seattle, WA to Miami, FL to show many stops and the 500-mile spacing.
-3. Show the raw JSON with `curl` and point at `routing.cached` (false, then true on the second call).
-4. Show the error handling: `start=London, UK` fails immediately without touching the router.
-5. Run `python manage.py test routing` and mention the dynamic-programming cross-check.
-6. Open `routing_client.py` and `planner.py` to show there is exactly one routing call.
-
 ## Tests
 
 `python manage.py test routing` runs 33 tests: optimizer cases worked out by hand, the randomized DP comparison, geometry, location parsing, and endpoint tests with the router mocked, so no network or paid API is used. A live end-to-end request against OSRM was run by hand and is not part of the automated suite.
